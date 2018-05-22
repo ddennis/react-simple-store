@@ -7,15 +7,10 @@ import dispatcher from '../dispatcher'
 export class AbstractStore {
 
 	constructor(_contentArr){
-
 		this.contentArr = [].concat(_contentArr);
-
 		this.changelisteners = [];
 
 		dispatcher.register( (action) => {
-
-			console.log (" BaseStore.js > action = " , action);
-			
 			var type = action.type;
 			var payload = action.payload;
 
@@ -31,7 +26,7 @@ export class AbstractStore {
 
 
 	/**
-	 * @override this should be overriddeb
+	 * @override this should be overridden
 	 * @private
  	 */
 	updateData(payload){
@@ -42,22 +37,12 @@ export class AbstractStore {
 		return this.contentArr
 	}
 
-
-// the pub sub part of the store
-//---------------------------------------------------------------------------------------
-
 	subscribe(func){
 		this.changelisteners.push(func)
 	}
 
 	update(){
-
-		var len = this.changelisteners.length;
-
-		for (var i = 0; i < len; i++) {
-			const listner = this.changelisteners[i]
-			listner()
-		}
+		this.changelisteners.forEach(listener => listener());
 	}
 
 

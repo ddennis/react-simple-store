@@ -13,7 +13,6 @@ export default class SelectedConferenceStore extends AbstractStore {
 
 	// is called from super, when the store is updated.
 	// this is the place to convert/transform data
-
 	updateData(action){
 
 		var payload = action.payload;
@@ -35,13 +34,12 @@ export default class SelectedConferenceStore extends AbstractStore {
 	deleteItem (payload){
 
 		const index = payload.index;
-
-		const newArr = [...this.contentArr]
+		const newArr = [...this.contentArr];
 		newArr.splice(index, 1);
 		this.contentArr = newArr;
-
 		this.update();
 	}
+
 
 	addItem (payload){
 		// doing a simple push works sometimes, but its preferred to not mutate data
@@ -49,7 +47,6 @@ export default class SelectedConferenceStore extends AbstractStore {
 
 		// this should generate a new array without modifying the old
 		this.contentArr  = this.contentArr.concat([payload]);
-
 		this.update();
 	}
 
