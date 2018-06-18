@@ -5,7 +5,7 @@
 
 import {AbstractStore} from './AbstractStore'
 
-export default class SelectedConferenceStore extends AbstractStore {
+export default class ItemStore extends AbstractStore {
 
 	constructor(_contentArr){
 		super(_contentArr)
@@ -19,12 +19,12 @@ export default class SelectedConferenceStore extends AbstractStore {
 		var type = action.type;
 
 		
-		if(type == "REMOVE_ITEM" ){
+		if(type === "REMOVE_ITEM" ){
 			this.deleteItem(payload)
 		}
 
 
-		if(action.type == "ADD_ITEM" ){
+		if(action.type === "ADD_ITEM" ){
 			this.addItem(payload)
 		}
 	}

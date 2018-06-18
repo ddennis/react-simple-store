@@ -31,14 +31,14 @@ export default class List extends Component {
 					<h1>{item}</h1>
 					<p onClick={() =>{
 						this.deleteItem(index)
-					} } style={{color:"red", cursor:"pointer"}}>delete</p>
+					} } style={{ cursor:"pointer"}}>delete</p>
 				</div>
 
 			)
 		});
 
 		return (
-			<div>
+			<div style={{width:"50%"}}>
 				{contents ? contents : 'no items'}
 			</div>
 
