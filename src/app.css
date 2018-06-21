@@ -1,0 +1,20 @@
+.item{
+    display: flex;
+    border-bottom: 1px solid;
+    flex-direction: row;
+    justify-content: space-around ;
+    align-items:  center ;
+}
+
+.item h1{
+
+}
+
+
+.item p{
+    background: grey;
+    padding: 10px;
+    font-size: 16px;
+    cursor:pointer;
+    color:white;
+}
