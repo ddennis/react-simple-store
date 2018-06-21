@@ -5,7 +5,6 @@ export default class ListUsingConsumer extends Component {
 
 
 	deleteItem = (index) =>{
-
 		console.log (" ListUsingConsumer.js > whwta = ", index );
 	};
 
