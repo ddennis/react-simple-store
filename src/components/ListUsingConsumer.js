@@ -17,15 +17,15 @@ export default class ListUsingConsumer extends Component {
 
 				{
 					(context) =>{
+
 						console.log (" ListUsingConsumer.js > context = " , context);
 
-						const items = context.state.texItems.map((item, index) =>{
+						const items = context.items.map((item, index) =>{
 							return (
 								<div key={index}>
 									<h1>{item}</h1>
 									<p onClick={() =>{
 										console.log (" ListUsingConsumer.js > actions.deleteItem = " , context.actions.deleteItem(index));
-
 									}} style={{cursor:"pointer"}}>delete</p>
 								</div>
 							)
@@ -33,11 +33,9 @@ export default class ListUsingConsumer extends Component {
 						
 						
 						return (
-							
 							<div style={{width:"50%"}}>
 								{items}
 							</div>
-
 						)
 					}
 				}
