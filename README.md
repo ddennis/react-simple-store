@@ -1,5 +1,7 @@
 # Examples on how to manege state without Redux
 
+![do you need it](https://github.com/ddennis/simple-store/blob/master/do_you_need_redux.jpg)
+
 This repos contains
 
 ## Denux.js
