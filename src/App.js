@@ -4,30 +4,25 @@
 import React, { Component } from 'react'
 
 import './app.css'
-import Amount from "./components/Amount";
-import List from "./components/List";
-import Wrapper from "./components/Wrapper";
-import ItemStore from "./dispatcher-example/ItemStore";
+import ProblemApp from "./problem-example/ProblemApp";
+import DenuxApp from "./denux-example/DenuxApp";
+import DispatcherApp from "./dispatcher-example/DispatcherApp";
+import ContextApp from "./context-example/ContextApp";
 
 export default class App extends Component {
 
 	constructor(props){
 		super(props);
-
 	}
-
 
 	render(){
 		return (
 			<div className="app">
-				<div className="headline">How to fix Prop drilling </div>
 
-				<Amount myValue={0}></Amount>
-				<hr/>
-
-				<Wrapper/>
-
-
+				<ProblemApp/>
+				{/*<DenuxApp/>*/}
+				{/*<DispatcherApp/>*/}
+				{/*<ContextApp/>*/}
 			</div>
 		)
 	}
