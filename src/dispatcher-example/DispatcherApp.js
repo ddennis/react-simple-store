@@ -9,7 +9,7 @@ class App extends Component {
 
 		super(props);
 
-		const items = ["ONE", "TWO", "THREE", "💩"];
+		const items = ["🙈", "⚽", "🍔", "💩"];
 
 		this.itemStore = new ItemStore(items);
 		
