@@ -3,7 +3,7 @@
  */
 
 
-import {AbstractStore} from './AbstractStore'
+import {AbstractStore} from '../store/AbstractStore'
 
 export default class ItemStore extends AbstractStore {
 
@@ -17,12 +17,10 @@ export default class ItemStore extends AbstractStore {
 
 		var payload = action.payload;
 		var type = action.type;
-
 		
 		if(type === "REMOVE_ITEM" ){
 			this.deleteItem(payload)
 		}
-
 
 		if(action.type === "ADD_ITEM" ){
 			this.addItem(payload)

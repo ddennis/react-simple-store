@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Denux } from "../Denux";
+import { Denux } from "./Denux";
 
 export default class DenuxValue extends Component {
 
@@ -15,6 +15,8 @@ export default class DenuxValue extends Component {
 				{
 					(context) =>{
 
+						console.log (" DenuxValue.js > context = " , context);
+						
 						return(
 							<div>
 								<h1>{context.items.length}</h1>

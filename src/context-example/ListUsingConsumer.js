@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ListConsumer } from "../provider/ListContext";
+import { ListConsumer } from "./ListContext";
 
 export default class ListUsingConsumer extends Component {
 
@@ -21,18 +21,18 @@ export default class ListUsingConsumer extends Component {
 
 						const items = context.items.map((item, index) =>{
 							return (
-								<div key={index}>
+								<div className="item" key={index}>
 									<h1>{item}</h1>
-									<p onClick={() =>{
+									<button onClick={() =>{
 										console.log (" ListUsingConsumer.js > actions.deleteItem = " , context.actions.deleteItem(index));
-									}} style={{cursor:"pointer"}}>delete</p>
+									}} style={{cursor:"pointer"}}>delete</button>
 								</div>
 							)
 						});
 						
 						
 						return (
-							<div style={{width:"50%"}}>
+							<div >
 								{items}
 							</div>
 						)

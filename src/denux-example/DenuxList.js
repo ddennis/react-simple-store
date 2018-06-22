@@ -2,7 +2,7 @@
  * Created by @author @ddennis - ddennis.dk aka fantastisk.dk/works aka meresukker.dk on 21-06-2018.
  */
 import React, { Component } from 'react'
-import { Denux, DenuxConsumer } from "../Denux";
+import { Denux  } from "./Denux";
 
 export default class DenuxList extends Component {
 
@@ -10,6 +10,7 @@ export default class DenuxList extends Component {
 		super(props)
 		this.counter = 0
 	}
+
 
 
 	render(){

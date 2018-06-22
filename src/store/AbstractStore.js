@@ -2,7 +2,7 @@
  * Created by @author @ddennis - ddennis.dk aka fantastisk.dk/works aka meresukker.dk on 02-03-2018.
  */
 
-import dispatcher from '../dispatcher'
+import dispatcher from '../dispatcher-example/dispatcher'
 
 export class AbstractStore {
 

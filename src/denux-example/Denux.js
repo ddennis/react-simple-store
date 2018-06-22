@@ -19,15 +19,6 @@ export class Denux extends Component {
 		}
 	};
 
-/*	state = {
-		items:["DENUX ONE", "DENUX TWO", "DENUX THREE"],
-		dispatch: ( action )=> {
-			this.setState(
-				state => this.props.reducer(state, action)
-			);
-		}
-	};*/
-
 
 	render() {
 		return <Context.Provider value={this.state}>{this.props.children}</Context.Provider>;
