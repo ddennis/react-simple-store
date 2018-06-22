@@ -13,12 +13,12 @@ export default class List extends Component {
 
 	deleteItem = (index) =>{
 		const action = {
-			type:"REMOVE_ITEM",
-			payload:{index:index}
+			type:"DELETE",
+			payload:index
 		};
 		dispatcher.dispatch(action)
-
 	};
+
 
 	render(){
 

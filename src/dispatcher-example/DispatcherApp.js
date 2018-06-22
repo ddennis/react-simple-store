@@ -21,13 +21,17 @@ class App extends Component {
 			items:this.itemStore.getData(),
 		}*/
 
+
 	}
 
 
 	itemStoreUpdate(){
 
-		// it's possible to use forceUpdate, if you do not want to use setState
+		// it's possible to use forceUpdate, otherwise just use state
 		this.forceUpdate();
+
+		//this.setState({items:this.itemStore.getData()})
+
 	}
 
 
@@ -36,7 +40,10 @@ class App extends Component {
 		return (
 			
 			<div className="App" >
+
 				<div className="headline">A simple dispacther and store</div>
+				<h1 style={{color:"red"}}>{ this.itemStore.getData().length }</h1>
+				<h1></h1>
 				<ListWithDispatcher items={this.itemStore.getData()} />
 			</div>
 		);

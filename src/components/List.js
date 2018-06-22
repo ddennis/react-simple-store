@@ -8,10 +8,9 @@ export default class TestList extends Component {
 	constructor(props){
 		super(props)
 		this.state = {
-			items:["ONE", "TWO", "THREE", "💩"]
+			items:["🙈", "⚽", "🍔", "💩"]
 		}
 	}
-
 
 
 	deleteIt = (index) => {
@@ -21,17 +20,15 @@ export default class TestList extends Component {
 	};
 
 
-
 	render(){
+
 		const items = this.state.items.map((item, index) =>{
 			return (
 				<div className="item" key={index}>
 					<h1>{item}</h1>
-
 					<button onClick={() =>{
 						this.deleteIt(index)
 					}}>delete</button>
-
 				</div>
 			)
 		});

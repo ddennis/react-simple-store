@@ -14,35 +14,18 @@ export default class App extends Component {
 	constructor(props){
 		super(props);
 
-		this.itemStore = new ItemStore(	["ONE", "TWO", "THREE", "💩"] )
-		this.itemStore.subscribe(this.storeUpdated.bind(this))
-
-		this.state = {
-			items:this.itemStore.getData()
-		}
 	}
-
-
-	storeUpdated(){
-		this.setState({items:this.itemStore.getData()})
-	}
-
-
-	deleteIt = (index) => {
-		const newArr = [...this.state.items];
-		newArr.splice(index, 1);
-		this.setState({items:newArr})
-	};
 
 
 	render(){
 		return (
 			<div className="app">
 				<div className="headline">How to fix Prop drilling </div>
-				<Amount myValue={this.state.items.length}></Amount>
+
+				<Amount myValue={0}></Amount>
 				<hr/>
 
-				<Wrapper items={this.state.items} deleteIt={this.deleteIt}/>
+				<Wrapper/>
 
 
 			</div>

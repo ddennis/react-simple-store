@@ -12,10 +12,9 @@ export class AbstractStore {
 
 		dispatcher.register( (action) => {
 			var type = action.type;
-			var payload = action.payload;
 
 			// simple error handling
-			if(!type || !payload ){
+			if(!type ){
 				throw new Error("SOMETHING WAS NOT DEFINED")
 			}
 

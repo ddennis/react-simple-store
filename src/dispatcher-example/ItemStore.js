@@ -18,11 +18,11 @@ export default class ItemStore extends AbstractStore {
 		var payload = action.payload;
 		var type = action.type;
 		
-		if(type === "REMOVE_ITEM" ){
+		if(type === "DELETE" ){
 			this.deleteItem(payload)
 		}
 
-		if(action.type === "ADD_ITEM" ){
+		if(action.type === "ADD" ){
 			this.addItem(payload)
 		}
 	}
@@ -31,7 +31,7 @@ export default class ItemStore extends AbstractStore {
 
 	deleteItem (payload){
 
-		const index = payload.index;
+		const index = payload
 		const newArr = [...this.contentArr];
 		newArr.splice(index, 1);
 		this.contentArr = newArr;
