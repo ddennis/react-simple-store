@@ -1,8 +1,9 @@
-# Examples on how to manege state without Redux
+# Examples on how to manage state without Redux
 
 ![do you need it](https://github.com/ddennis/simple-store/blob/master/do_you_need_redux.jpg)
 
-This repos contains
+
+# This repos contains
 
 ## Denux.js
 An example on how to make a reusable solutions using the new Context API. It uses the basic concepts from Redux like reducers and dispatcher
@@ -17,3 +18,5 @@ An example of using a custom singleton dispatcher to communicate with each store
 This is a simple solution to manage state in one place and contain logic  which updates state
 
 
+### read the article 
+https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367
