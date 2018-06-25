@@ -19,8 +19,8 @@ export default class App extends Component {
 		return (
 			<div className="app">
 
-				<ProblemApp/>
-				{/*<DenuxApp/>*/}
+				{/*<ProblemApp/>*/}
+				<DenuxApp/>
 				{/*<DispatcherApp/>*/}
 				{/*<ContextApp/>*/}
 			</div>
