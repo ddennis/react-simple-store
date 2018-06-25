@@ -50,6 +50,22 @@ button {
 
 }
 
+button.filter {
+    background: none;
+    color: black;
+    border-radius: 0px;
+    margin: 0;
+    box-shadow: none ;
+}
+
+
+button.load{
+
+    background: black;
+    color: white;
+}
+
+
 
 .headline{
     color:white;
