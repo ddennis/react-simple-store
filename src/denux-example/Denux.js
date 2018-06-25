@@ -11,6 +11,20 @@ export class Denux extends Component {
 
 	static Consumer = Context.Consumer;
 
+	// Static utility function - stolen from redux
+	static combineReducers = (reducers) => {
+		return (state = {}, action) => {
+			return Object.keys(reducers).reduce(
+				(nextState, key) => {
+					nextState[key] = reducers[key](state[key], action );
+					return nextState;
+				},
+				{}
+			);
+		};
+	};
+
+
 	state = {
 		...this.props.state, dispatch:(action) =>{
 			this.setState(
