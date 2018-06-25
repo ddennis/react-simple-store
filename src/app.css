@@ -5,19 +5,20 @@
     justify-content: space-between;
     align-items:  center ;
     padding-left: 20px;
-}
-
-.item h1{
+    margin-bottom: 100px;
 
 }
 
 
-.item p{
-    background: grey;
-    padding: 10px;
+
+.item ,p{
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+    padding: 0px;
     font-size: 16px;
     cursor:pointer;
-    color:white;
+
 
 }
 
@@ -72,4 +73,58 @@ button.load{
     background: black;
     padding: 10px;
 
+}
+
+
+.spinner-container {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: rgba(255,255,255, .8);
+
+    position: absolute;
+
+}
+
+.spinner {
+    margin: 100px auto 0;
+    width: 70px;
+    text-align: center;
+}
+
+.spinner > div {
+    width: 18px;
+    height: 18px;
+    background-color: #4685ff;
+
+    border-radius: 100%;
+    display: inline-block;
+
+    animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+
+    animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+    0%, 80%, 100% { -webkit-transform: scale(0) }
+    40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bouncedelay {
+    0%, 80%, 100% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    } 40% {
+          -webkit-transform: scale(1.0);
+          transform: scale(1.0);
+      }
 }
