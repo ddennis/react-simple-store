@@ -7,14 +7,16 @@ import Spinner from "../components/Spinner";
 
 import dispatcher from "../dispatcher-example/dispatcher";
 import * as fetchData from "./fetchData";
-
+import {visibilityFilter} from './visibilityFilter'
 
 export default class DenuxList extends Component {
 
+
 	constructor(props){
-		super(props)
-		this.counter = 0
+		super(props);
+		this.counter = 0;
 	}
+
 
 	render(){
 		return (
@@ -23,7 +25,10 @@ export default class DenuxList extends Component {
 				{
 					(context) =>{
 
-						const items = context.list.items.map((item, index) =>{
+						
+						const visibleItems = visibilityFilter(context.list.items, context.itemFilter)
+
+						const items = visibleItems.map((item, index) =>{
 							return (
 								<div className="item" key={index}>
 									<h1>{item}</h1>
@@ -33,7 +38,6 @@ export default class DenuxList extends Component {
 								</div>
 							)
 						});
-
 
 						return (
 							<div>
