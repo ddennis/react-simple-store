@@ -3,6 +3,11 @@
  */
 import React, { Component } from 'react'
 import { Denux } from "./Denux";
+import Spinner from "../components/Spinner";
+
+import dispatcher from "../dispatcher-example/dispatcher";
+import * as fetchData from "./fetchData";
+
 
 export default class DenuxList extends Component {
 
@@ -18,22 +23,25 @@ export default class DenuxList extends Component {
 				{
 					(context) =>{
 
-						const items = context.items.map((item, index) =>{
+						const items = context.list.items.map((item, index) =>{
 							return (
-								<div key={index}>
+								<div className="item" key={index}>
 									<h1>{item}</h1>
-									<p onClick={() =>{
+									<button onClick={() =>{
 										context.dispatch({type:"DELETE", index:index})
-									}} style={{cursor:"pointer"}}>delete</p>
+									}} >delete</button>
 								</div>
 							)
 						});
 
+
 						return (
 							<div>
-								{items}
 
-								<hr/>
+								{/* RENDER SPINNER IF DATA IS LOADING */}
+								{context.list.isFetching ? <Spinner/> : null }
+
+								{items}
 
 								<div style={{display:"flex"}}>
 									<button onClick={() =>{
@@ -59,7 +67,11 @@ export default class DenuxList extends Component {
 									</button>
 
 									<button className="load" onClick={() =>{
-										context.dispatch({type:"START_LOAD"})
+
+										/*const getData = dataFetch.fetchPosts('https://api.github.com/users/ddennis');
+										getData(context.dispatch, "LOAD_START", "LOAD_COMPLETED", "ADD_MANY");*/
+										fetchData.fetchSomeData(context.dispatch, "ddennis")
+
 									}}>
 										load
 									</button>
