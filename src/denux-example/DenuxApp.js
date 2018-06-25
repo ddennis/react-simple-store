@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 
 import { itemReducer } from "./itemReducer";
 import DenuxList from "./DenuxList";
-import DenuxValue from "./DenuxValue";
+import {DenuxValue} from "./DenuxValue";
 import { Denux } from "./Denux";
 import { filterReducer } from "./filterReducer";
 
@@ -14,13 +14,15 @@ export default class DenuxApp extends Component {
 		super(props);
 
 		this.myStateObj = {
-			items:["ONE", "TWO", "THREE"],
+			list:{
+					isFetching:false,
+					items:["ONE", "TWO", "THREE"]
+				},
 			itemFilter:"SHOW_ALL"
 		};
 
-
 		this.appReducers = Denux.combineReducers({
-			items:itemReducer,
+			list:itemReducer,
 			itemFilter:filterReducer
 		});
 
@@ -40,29 +42,3 @@ export default class DenuxApp extends Component {
 		);
 	}
 }
-
-/*
-const createStore = (reducer) => {
-  let state;
-  let listeners = [];
-
-  const getState = () => state;
-
-  const dispatch = (action) => {
-    state = reducer(state, action);
-    listeners.forEach(listener => listener());
-  };
-
-  const subscribe = (listener) => {
-    listeners.push(listener);
-    return () => {
-      listeners = listeners.filter(l => l !== listener);
-    };
-  };
-
-  dispatch({});
-
-  return { getState, dispatch, subscribe };
-};
-
-*/
