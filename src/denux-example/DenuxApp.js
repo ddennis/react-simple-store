@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 
 
-import { listReducer } from "./ListReducer";
+
+import { itemReducer } from "./itemReducer";
 import DenuxList from "./DenuxList";
 import DenuxValue from "./DenuxValue";
 import { Denux } from "./Denux";
+import { filterReducer } from "./filterReducer";
 
 export default class DenuxApp extends Component {
 
@@ -12,16 +14,25 @@ export default class DenuxApp extends Component {
 		super(props);
 
 		this.myStateObj = {
-			items:["ONE", "TWO", "THREE"]
-		}
-	}
+			items:["ONE", "TWO", "THREE"],
+			itemFilter:"SHOW_ALL"
+		};
+
+
+		this.appReducers = Denux.combineReducers({
+			items:itemReducer,
+			itemFilter:filterReducer
+		});
+
+	};
+
 
 	render(){
 
 		return (
 			<div className="App" >
 				<div className="headline">Denux.js - 🙈  a taste of the furture</div>
-				<Denux reducer={listReducer} state={this.myStateObj}>
+				<Denux reducer={this.appReducers} state={this.myStateObj}>
 					<DenuxValue/>
 					<DenuxList/>
 				</Denux>
@@ -30,4 +41,28 @@ export default class DenuxApp extends Component {
 	}
 }
 
+/*
+const createStore = (reducer) => {
+  let state;
+  let listeners = [];
 
+  const getState = () => state;
+
+  const dispatch = (action) => {
+    state = reducer(state, action);
+    listeners.forEach(listener => listener());
+  };
+
+  const subscribe = (listener) => {
+    listeners.push(listener);
+    return () => {
+      listeners = listeners.filter(l => l !== listener);
+    };
+  };
+
+  dispatch({});
+
+  return { getState, dispatch, subscribe };
+};
+
+*/
