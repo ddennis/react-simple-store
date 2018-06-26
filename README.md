@@ -6,8 +6,11 @@
 # This repos contains
 
 ## Denux.js
-An example on how to make a reusable solutions using the new Context API. It uses the basic concepts from Redux like reducers and dispatcher
+An example on how to make a reusable solutions using the new Context API. It uses the basic concepts from Redux like reducers and dispatcher.
+Now also supports combinedReduceres and contains examples on how to use async reduceres.
 
+##### Denux is now availble on npm
+    npm install denux --save
 
 ## Context example
 A simple example of the new Context API. How to make a Provider component and "consume" the data.
