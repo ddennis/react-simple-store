@@ -2,10 +2,10 @@
  * Created by @author @ddennis - ddennis.dk aka fantastisk.dk/works aka meresukker.dk on 21-06-2018.
  */
 import React, { Component } from 'react'
-import { Denux } from "./Denux";
-import Spinner from "../components/Spinner";
+import Denux  from "denux";
+import {Spinner} from "../components/Spinner";
 
-import dispatcher from "../dispatcher-example/dispatcher";
+
 import * as fetchData from "./fetchData";
 import {visibilityFilter} from './visibilityFilter'
 
@@ -17,17 +17,13 @@ export default class DenuxList extends Component {
 		this.counter = 0;
 	}
 
-
 	render(){
 		return (
 
 			<Denux.Consumer>
 				{
 					(context) =>{
-
-						
 						const visibleItems = visibilityFilter(context.list.items, context.itemFilter)
-
 						const items = visibleItems.map((item, index) =>{
 							return (
 								<div className="item" key={index}>
@@ -72,8 +68,6 @@ export default class DenuxList extends Component {
 
 									<button className="load" onClick={() =>{
 
-										/*const getData = dataFetch.fetchPosts('https://api.github.com/users/ddennis');
-										getData(context.dispatch, "LOAD_START", "LOAD_COMPLETED", "ADD_MANY");*/
 										fetchData.fetchSomeData(context.dispatch, "ddennis")
 
 									}}>
