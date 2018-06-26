@@ -7,6 +7,7 @@ import  Denux from "denux";
 
 import { listReducer } from "./reducers/listReducer";
 import { filterReducer } from "./reducers/filterReducer";
+import NestedDenux from "./NestedDenux";
 
 
 export default class DenuxApp extends Component {
@@ -30,7 +31,6 @@ export default class DenuxApp extends Component {
 		});
 	};
 
-
 	render(){
 		return (
 			<div className="App" >
@@ -43,6 +43,7 @@ export default class DenuxApp extends Component {
 				>
 					<DenuxValue/>
 					<DenuxList/>
+					<NestedDenux/>
 				</Denux>
 			</div>
 		);
