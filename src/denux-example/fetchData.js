@@ -4,9 +4,9 @@
 
 // Example of handing async data, like loading data
 
-const CUSTOM_LOAD_START = "LOAD_START";
-const CUSTOM_LOAD_COMPLETED = "LOAD_COMPLETED";
-const CUSTOM_UPDATE_DATA = "ADD_MANY";
+const CUSTOM_LOAD_START = "LIST_LOAD_START";
+const CUSTOM_LOAD_COMPLETED = "LIST_LOAD_COMPLETED";
+const CUSTOM_UPDATE_DATA = "LIST_ADD_MANY";
 
 export function fetchSomeData (dispatch, user ){ {
 
