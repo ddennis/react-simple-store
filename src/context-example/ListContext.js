@@ -1,12 +1,10 @@
-import { createContext } from 'react'
 
-const ListContext = createContext({
-	firstName: 'default name',
-	lastName: 'default lastname'
-});
+
+import React, { Component } from 'react'
+
+const ListContext = React.createContext();
 
 export const ListProvider = ListContext.Provider;
-
 export const ListConsumer = ListContext.Consumer;
 
 

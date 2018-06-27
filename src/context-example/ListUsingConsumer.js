@@ -17,14 +17,13 @@ export default class ListUsingConsumer extends Component {
 				{
 					(context) =>{
 
-						console.log (" ListUsingConsumer.js > context = " , context);
 
 						const items = context.items.map((item, index) =>{
 							return (
 								<div className="item" key={index}>
 									<h1>{item}</h1>
 									<button onClick={() =>{
-										console.log (" ListUsingConsumer.js > actions.deleteItem = " , context.actions.deleteItem(index));
+										context.actions.deleteItem(index)
 									}} style={{cursor:"pointer"}}>delete</button>
 								</div>
 							)
@@ -32,14 +31,12 @@ export default class ListUsingConsumer extends Component {
 						
 						
 						return (
-							<div >
+							<div>
 								{items}
 							</div>
 						)
 					}
 				}
-
-
 			</ListConsumer>
 
 		)
