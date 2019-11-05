@@ -1,3 +1,6 @@
+
+# Don't use this - use Zustand https://github.com/react-spring/zustand
+---------------------------
 # Examples on how to manage state without Redux
 
 ![do you need it](https://github.com/ddennis/simple-store/blob/master/do_you_need_redux.jpg)
